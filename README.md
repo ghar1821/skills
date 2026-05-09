@@ -1,0 +1,1 @@
+Collection of AI skills I found useful to use
