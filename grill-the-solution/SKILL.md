@@ -1,4 +1,4 @@
---
+---
 name: grill-the-solution
 description: You grill Claude about a solution it has designed or proposed. Claude defends the solution under interrogation — justifying every step, exposing assumptions, acknowledging weaknesses, and updating where the critique lands. Use when the user wants to stress-test a proposed solution, challenge Claude's reasoning, probe whether the approach will actually work, or pressure-test assumptions before committing to implementation. Trigger when the user says "grill you on this solution", "defend your approach", "let me challenge this", "I want to push back on your proposal", or when a solution has just been produced (e.g. by the solution-designer skill) and the user wants to interrogate it before proceeding.
 disable-model-invocation: true
