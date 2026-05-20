@@ -1,3 +1,6 @@
 [submodule "humanizer"]
 	path = humanizer
 	url = https://github.com/blader/humanizer.git
+[submodule "science-skills"]
+	path = science-skills
+	url = https://github.com/google-deepmind/science-skills.git
