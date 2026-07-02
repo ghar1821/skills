@@ -68,7 +68,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
   
 - Name variables after what they contain, not how they were derived or what type they carry.
   
-- Comment code to explain what each logical block does. When writing or editing comments, run `/humanizer` to make them sound natural rather than AI-generated.
+- Comment code to explain what each logical block does, especially for blocks that are complex and difficult to understand. Doctstring must be written for every single function in the script regardless of how simple or complex the function is. Code within the function and script in general must contain enough comment to make it easy for anyone to check their correctness. Comment must be written to facilitate this. Do not attempt to hide anything. When writing or editing comments, use `/humanizer` to make them sound natural rather than AI-generated. 
   
 - Prefer well-established public APIs over custom implementations (e.g. `tempfile.TemporaryDirectory` over manual cleanup). Only use a library if it is widely used and actively maintained — avoid packages that solve one narrow problem.
   
