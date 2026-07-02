@@ -31,7 +31,8 @@ When editing existing code:
 - Don't "improve" adjacent code, comments, or formatting.
 - Don't refactor things that aren't broken.
 - Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
+- If you find unrelated dead code, mention it, ask the user whether it should be removed, and follow what they said.
+- If you find any imports that are not used, remove them.
 - Always first check whether the code has been updated by user before updating. Do not work based on just memory. 
   
 When your changes create orphans:
@@ -72,6 +73,8 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 - Prefer well-established public APIs over custom implementations (e.g. `tempfile.TemporaryDirectory` over manual cleanup). Only use a library if it is widely used and actively maintained — avoid packages that solve one narrow problem.
   
 - **Lean on the standard library.** Use `pathlib`, `hashlib`, `tempfile`, `argparse` rather than third-party wrappers for things Python already does well.
+
+- Only import libraries that are used in the scripts. 
   
 ### Testing
 
