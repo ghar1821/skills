@@ -1,5 +1,7 @@
 Embed this into CLAUDE.md when starting new project to ensure it adheres to your coding style. 
 
+Ask me questions until you are 90% sure of how to proceed and then act as my sparring partner to challenge and test my way forward.
+
 ## 1. Think Before Coding  
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
