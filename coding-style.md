@@ -83,3 +83,9 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 - **Prefer real dependencies over mocks** when the one-off setup cost is modest. A real model that downloads once and caches locally is more reliable than a mock that hides real failure modes. Only mock at genuine system boundaries where real calls are expensive, non-deterministic, or have side effects (e.g. a live LLM API that bills per token).
 - 
 - **All changes must pass the unit test suite.** Run `.venv/bin/pytest code/` before considering a change done. If a change breaks a test, fix the code or update the test to reflect the new intended behaviour — do not skip or delete tests to make them pass.
+### Error handling — never silently mask a failure
+
+- **Do not catch an error or hit a degenerate case (NaN, empty, unmapped key, undefined metric) and substitute a plausible-looking default with no trace of what happened.** This includes `except: return <default>` with no log, and `dict.get(key, <default>)` used to paper over a key that should always exist. A silently substituted default is indistinguishable from a genuine result, so it hides bugs instead of surfacing them — e.g. defaulting an undefined AUROC to 0.5 makes a broken feature look like a real coin-flip result instead of a computation that failed.
+- **If a case should never happen given correct upstream data, let it crash** (raw `dict[key]` / re-raise) rather than guessing a fallback value. A `KeyError` with a clear traceback is more informative than a run that "succeeds" with corrupted output.
+- **If a fallback is genuinely the intended behaviour** (not an error), it's fine to keep it — but log when it triggers, so a spike in fallback usage is visible instead of invisible.
+- When in doubt: showing the error is always more informative than hiding it.
