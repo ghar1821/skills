@@ -2,6 +2,8 @@ Embed this into CLAUDE.md when starting new project to ensure it adheres to your
 
 Ask me questions until you are 90% sure of how to proceed and then act as my sparring partner to challenge and test my way forward.
 
+DO NOT use compact annotation. Write the steps out properly even if it means more lines of code. Prioritise readability.
+
 ## 1. Think Before Coding  
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
